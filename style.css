@@ -74,6 +74,12 @@ body * {
   transform: translateY(-50%);
   position: absolute;
   z-index: 1;
+
+  animation: slide-to-dark 0.3s forwards;
+}
+
+#switch button:hover{
+  outline: 8px solid var(--surface-color);
 }
 
 #switch span {
@@ -88,8 +94,7 @@ body * {
 }
 
 .light #switch button{
-  right: 0;
-  left: initial;
+  animation: slide-to-light 0.3s forwards;
 }
 
 ul {
@@ -158,5 +163,23 @@ footer {
   
   .light{
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+@keyframes slide-to-light{
+  from{
+    left: 0;
+  }
+  to{
+    left: 50%;
+  }
+}
+
+@keyframes slide-to-dark{
+  from{
+    left: 50%;
+  }
+  to{
+    left: 0;
   }
 }
